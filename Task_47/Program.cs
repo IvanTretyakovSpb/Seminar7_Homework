@@ -28,7 +28,7 @@ int GetNumberFromUser(string message, string errorMessage)
         Console.WriteLine(errorMessage);
     }
 }
-// создаём двуменый массив, заполненный случайными вещественными числами
+// создаём двуменый массив, заполненный случайными вещественными числами от - 99,9 до 99,9
 double[,] GetArray(int m, int n)
 {
     double[,] result = new double[m, n];
@@ -36,7 +36,7 @@ double[,] GetArray(int m, int n)
     {
         for (int j = 0; j < n; j++)
         {
-            result[i, j] = Math.Round(new Random().NextDouble() * 100, 1);
+            result[i, j] = Math.Round(new Random().NextDouble(), 1) + new Random().Next(-100, 100);
         }
     }
     return result;
